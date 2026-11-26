@@ -1,0 +1,72 @@
+{
+  "prompt_injection": {
+    "n_fail_samples": 50,
+    "clean_fail_recall": 0.76,
+    "injected_fail_recall": 0.48,
+    "raw_argmax_flip_to_pass_count": 24,
+    "raw_argmax_flip_to_pass_pct": 48.0,
+    "s1_auto_accepted_asr_count": 0,
+    "s1_auto_accepted_asr_pct": 0.0,
+    "s2_auto_accepted_asr_count": 2,
+    "s2_auto_accepted_asr_pct": 4.0
+  },
+  "long_input_degradation": {
+    "overall": {
+      "<=256": {
+        "n": 356,
+        "accuracy": 0.6938,
+        "macro_f1": 0.6916,
+        "fail_recall": 0.7
+      },
+      "257-512": {
+        "n": 1709,
+        "accuracy": 0.9362,
+        "macro_f1": 0.9574,
+        "fail_recall": 0.9399
+      },
+      "513-1024": {
+        "n": 369,
+        "accuracy": 0.9621,
+        "macro_f1": 0.9619,
+        "fail_recall": 0.9593
+      }
+    },
+    "medec_ms": {
+      "<=256": {
+        "n": 232,
+        "accuracy": 0.5302,
+        "macro_f1": 0.6487,
+        "fail_recall": 0.6538
+      },
+      "257-512": {
+        "n": 111,
+        "accuracy": 0.5045,
+        "macro_f1": 0.6604,
+        "fail_recall": 0.6364
+      },
+      "513-1024": {
+        "n": 0
+      }
+    },
+    "medhallu": {
+      "<=256": {
+        "n": 124,
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "fail_recall": 1.0
+      },
+      "257-512": {
+        "n": 1598,
+        "accuracy": 0.9662,
+        "macro_f1": 0.9662,
+        "fail_recall": 0.9605
+      },
+      "513-1024": {
+        "n": 369,
+        "accuracy": 0.9621,
+        "macro_f1": 0.9619,
+        "fail_recall": 0.9593
+      }
+    }
+  }
+}

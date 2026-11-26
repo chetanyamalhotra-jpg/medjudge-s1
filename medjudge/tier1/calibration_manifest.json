@@ -1,0 +1,24 @@
+{
+  "model_name": "thomas-sounack/BioClinical-ModernBERT-base",
+  "quantization": "selective_dynamic_int8_ffn_only",
+  "temperature": 1.0,
+  "d_t_size": 150,
+  "d_tau_size": 150,
+  "rule_of_three_upper_bound": 0.02,
+  "thresholds": {
+    "S1": {
+      "pass_threshold": 0.98,
+      "fail_threshold": 0.85
+    },
+    "S2": {
+      "pass_threshold": 0.93,
+      "fail_threshold": 0.90
+    },
+    "S3": {
+      "pass_threshold": 0.82,
+      "fail_threshold": 0.82
+    }
+  },
+  "calibrated_at_utc": "2026-11-25T00:00:00+00:00",
+  "notes": "Default post-INT8 calibration manifest. With n=150 zero-miss gold items, Rule of Three 95% upper bound on true S1 miss rate is 3/150 = 2.0%. Re-fit T* on D_T and LCB thresholds on disjoint D_tau after exporting trained weights."
+}

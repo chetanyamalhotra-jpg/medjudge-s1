@@ -1,0 +1,51 @@
+# Python / virtualenvs / caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# Secrets & local configuration
+.env
+.env.*
+*.key
+*.pem
+*credentials*
+
+# Model binaries, checkpoints & cached tensors (GitHub 100 MB limit)
+*.onnx
+*.onnx.data
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.ckpt
+*.npz
+system-one-checkpoints/
+
+# Ignore training/probe artifacts by default, allowing lightweight reports & plots
+artifacts/*
+!artifacts/bioclinical_modernbert_int8/
+artifacts/bioclinical_modernbert_int8/*
+!artifacts/bioclinical_modernbert_int8/calibration_manifest.json
+!artifacts/bioclinical_modernbert_int8/canonical_eval_report.json
+!artifacts/bioclinical_modernbert_int8/holdout_eval_report.json
+!artifacts/bioclinical_modernbert_int8/export_benchmark_report.json
+!artifacts/bioclinical_modernbert_int8/robustness_report.json
+!artifacts/bioclinical_modernbert_int8/eval_plots/
+artifacts/bioclinical_modernbert_int8/eval_plots/*
+!artifacts/bioclinical_modernbert_int8/eval_plots/*.png
+
+# Datasets & sealed holdouts (never redistribute raw/processed/holdout data)
+data/
+*.jsonl
+
+# Audit logs & OS clutter
+audit_logs/
+.DS_Store
+Thumbs.db

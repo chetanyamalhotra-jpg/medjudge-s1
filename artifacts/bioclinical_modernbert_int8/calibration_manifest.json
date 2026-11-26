@@ -1,0 +1,24 @@
+{
+  "model_name": "thomas-sounack/BioClinical-ModernBERT-base",
+  "quantization": "selective_dynamic_int8_mlp_wi_only",
+  "temperature": 1.395134,
+  "d_t_size": 2428,
+  "d_tau_size": 2431,
+  "rule_of_three_upper_bound": 0.001234,
+  "thresholds": {
+    "S1": {
+      "pass_threshold": 0.97,
+      "fail_threshold": 0.85
+    },
+    "S2": {
+      "pass_threshold": 0.92,
+      "fail_threshold": 0.9
+    },
+    "S3": {
+      "pass_threshold": 0.8,
+      "fail_threshold": 0.8
+    }
+  },
+  "calibrated_at_utc": "2026-11-25T13:19:54.030590+00:00",
+  "notes": "Post-INT8 L-BFGS temperature T*=1.3951 fit on D_T (n=2428); S2 asymmetric 95% LCB thresholds fit on disjoint D_tau (n=2431). GeGLU mlp.Wo kept in FP32 alongside attn/LayerNorm/Softmax/head due to GeGLU product activation outliers. S1/S3 remain at conservative clinical floors pending dedicated S1/S3 gold calibration."
+}

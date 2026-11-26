@@ -1,0 +1,123 @@
+{
+  "d_val_breakdown": {
+    "overall": {
+      "n": 2434,
+      "accuracy": 0.9047,
+      "macro_f1": 0.9333,
+      "pass_f1": 0.8982,
+      "fail_f1": 0.9015,
+      "unknown_f1": 1.0,
+      "fail_recall": 0.9179,
+      "ece": 0.0136,
+      "brier_score": 0.1101
+    },
+    "medec_ms": {
+      "n": 343,
+      "accuracy": 0.5219,
+      "macro_f1": 0.6527,
+      "pass_f1": 0.4015,
+      "fail_f1": 0.5568,
+      "unknown_f1": 1.0,
+      "fail_recall": 0.6478,
+      "ece": 0.0527,
+      "brier_score": 0.4734
+    },
+    "medhallu_pqa_labeled": {
+      "n": 204,
+      "accuracy": 0.9755,
+      "macro_f1": 0.983,
+      "pass_f1": 0.9746,
+      "fail_f1": 0.9744,
+      "unknown_f1": 1.0,
+      "fail_recall": 0.9694,
+      "ece": 0.0188,
+      "brier_score": 0.0456
+    },
+    "medhallu_pqa_artificial": {
+      "n": 1887,
+      "accuracy": 0.9666,
+      "macro_f1": 0.9767,
+      "pass_f1": 0.9652,
+      "fail_f1": 0.9648,
+      "unknown_f1": 1.0,
+      "fail_recall": 0.96,
+      "ece": 0.0089,
+      "brier_score": 0.0511
+    }
+  },
+  "medec_ms_test": {
+    "n_notes": 597,
+    "true_pass": 286,
+    "true_fail": 311,
+    "standalone": {
+      "n": 597,
+      "accuracy": 0.5025,
+      "macro_f1": 0.4709,
+      "pass_f1": 0.3415,
+      "fail_f1": 0.6003,
+      "unknown_f1": null,
+      "fail_recall": 0.717,
+      "ece": 0.0275,
+      "brier_score": 0.5017
+    },
+    "bootstrap_95ci": {
+      "macro_f1_95ci": {
+        "low": 0.4317,
+        "high": 0.5113
+      },
+      "fail_recall_95ci": {
+        "low": 0.6677,
+        "high": 0.7669
+      },
+      "accuracy_95ci": {
+        "low": 0.4623,
+        "high": 0.5427
+      }
+    },
+    "aurc": 0.4852,
+    "six_pillars_summary": {
+      "n_items": 597,
+      "accuracy": 0.5025,
+      "ece": 0.0275,
+      "brier_score": 0.5017,
+      "aurc": 0.4852,
+      "tier1_coverage": 1.0,
+      "s1_false_pass_count": 0,
+      "s1_false_pass_rate": 0.0,
+      "mean_latency_ms": 235.54,
+      "estimated_cost_savings_pct": 100.0
+    },
+    "cascade_s1_gate": {
+      "pass_threshold": 0.97,
+      "fail_threshold": 0.85,
+      "tier1_coverage_pct": 0.0,
+      "tier2_escalation_pct": 100.0,
+      "accepted_count": 0,
+      "escalated_count": 597,
+      "accepted_subset_accuracy": 0.0,
+      "catastrophic_false_pass_count": 0,
+      "catastrophic_false_pass_pct_of_all": 0.0,
+      "catastrophic_false_pass_pct_of_fails": 0.0,
+      "cascade_macro_f1_with_tier2": 1.0,
+      "cascade_fail_recall_with_tier2": 1.0
+    },
+    "cascade_s2_gate": {
+      "pass_threshold": 0.92,
+      "fail_threshold": 0.9,
+      "tier1_coverage_pct": 0.0,
+      "tier2_escalation_pct": 100.0,
+      "accepted_count": 0,
+      "escalated_count": 597,
+      "accepted_subset_accuracy": 0.0,
+      "catastrophic_false_pass_count": 0,
+      "catastrophic_false_pass_pct_of_all": 0.0,
+      "catastrophic_false_pass_pct_of_fails": 0.0,
+      "cascade_macro_f1_with_tier2": 1.0,
+      "cascade_fail_recall_with_tier2": 1.0
+    },
+    "plots": {
+      "risk_coverage": "artifacts\\bioclinical_modernbert_int8\\eval_plots\\risk_coverage_medec_ms_test.png",
+      "pareto": "artifacts\\bioclinical_modernbert_int8\\eval_plots\\pareto_medec_ms_test.png"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "fp32_size_mb": 571.33,
+  "int8_size_mb": 460.22,
+  "quantized_ffn_node_count": 22,
+  "sample_quantized_nodes": [
+    "/model/layers.0/mlp/Wi/MatMul",
+    "/model/layers.1/mlp/Wi/MatMul",
+    "/model/layers.2/mlp/Wi/MatMul",
+    "/model/layers.3/mlp/Wi/MatMul",
+    "/model/layers.4/mlp/Wi/MatMul",
+    "/model/layers.5/mlp/Wi/MatMul"
+  ],
+  "temperature_T_star": 1.395134,
+  "d_val_pre_int8_fp32": {
+    "macro_f1": 0.9344,
+    "pass_f1": 0.8992,
+    "fail_f1": 0.904,
+    "unknown_f1": 1.0,
+    "ece": 0.0125,
+    "brier_score": 0.11
+  },
+  "d_val_post_int8_uncalibrated": {
+    "macro_f1": 0.9341,
+    "pass_f1": 0.8995,
+    "fail_f1": 0.9028,
+    "unknown_f1": 1.0,
+    "ece": 0.0119,
+    "brier_score": 0.1116
+  },
+  "d_val_post_int8_calibrated": {
+    "macro_f1": 0.9341,
+    "pass_f1": 0.8995,
+    "fail_f1": 0.9028,
+    "unknown_f1": 1.0,
+    "ece": 0.0075,
+    "brier_score": 0.111
+  },
+  "cpu_latency_ms": {
+    "256": {
+      "p50_ms": 229.88,
+      "p95_ms": 258.42
+    },
+    "512": {
+      "p50_ms": 597.15,
+      "p95_ms": 692.43
+    },
+    "1024": {
+      "p50_ms": 1896.4,
+      "p95_ms": 2044.4
+    }
+  }
+}

@@ -1,0 +1,64 @@
+[build-system]
+requires = ["hatchling>=1.25.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "medjudge"
+version = "0.1.0"
+description = "MedJudge-S1: Calibrated local System One medical AI evaluation classifier and 4-tier BYOK evaluation harness"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11,<3.14"
+authors = [
+  { name = "MedJudge-S1 Contributors" },
+]
+keywords = ["medical-ai", "evaluation", "system-one", "onnx", "calibration", "clinical-nlp"]
+dependencies = [
+  "pydantic>=2.7.0",
+  "pyyaml>=6.0.1",
+  "numpy>=1.26.0",
+  "onnxruntime>=1.18.0",
+  "tokenizers>=0.19.0",
+  "httpx>=0.27.0",
+  "fastapi>=0.111.0",
+  "uvicorn>=0.30.0",
+  "scipy>=1.13.0",
+]
+
+[project.optional-dependencies]
+training = [
+  "torch>=2.4.0",
+  "transformers>=4.48.0",
+  "peft>=0.13.0",
+  "datasets>=3.0.0",
+  "accelerate>=1.0.0",
+  "onnx>=1.16.0",
+  "onnxscript>=0.1.0",
+  "scikit-learn>=1.5.0",
+  "datasketch>=1.6.0",
+]
+eval = [
+  "scikit-learn>=1.5.0",
+  "matplotlib>=3.9.0",
+]
+dev = [
+  "pytest>=8.2.0",
+  "pytest-asyncio>=0.23.0",
+  "ruff>=0.6.0",
+  "onnx>=1.16.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["medjudge"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]
